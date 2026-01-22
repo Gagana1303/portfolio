@@ -7,12 +7,26 @@ export default function ProtectedRoute({ children }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => {
-      if (!data.session) navigate("/admin/login");
-      setLoading(false);
-    });
+    const checkAuth = async () => {
+      const { data } = await supabase.auth.getSession();
+
+      if (!data.session) {
+        navigate("/admin/login", { replace: true });
+      } else {
+        setLoading(false);
+      }
+    };
+
+    checkAuth();
   }, [navigate]);
 
-  if (loading) return null;
+  if (loading) {
+    return (
+      <div style={{ color: "#fff", padding: "40px" }}>
+        Checking authentication...
+      </div>
+    );
+  }
+
   return children;
 }

@@ -32,24 +32,22 @@ export default function AdminLogin() {
     style={{
       minHeight: "100vh",
       background: "#0f0f0f",
-      paddingTop: "120px",   // 👈 moves content down
+      paddingTop: "100px",
       display: "flex",
       justifyContent: "center",
-      color: "#fff",
     }}
   >
     <div
       style={{
-        width: "380px",
+        width: "360px",
         padding: "28px",
         background: "#1c1c1c",
         borderRadius: "10px",
         boxShadow: "0 10px 40px rgba(0,0,0,0.6)",
+        height: "fit-content", // 👈 KEY FIX
       }}
     >
-      <h2 style={{ marginBottom: "20px", textAlign: "left" }}>
-        Admin Login
-      </h2>
+      <h2 style={{ marginBottom: "20px" }}>Admin Login</h2>
 
       <input
         type="email"
@@ -89,9 +87,14 @@ export default function AdminLogin() {
       >
         Login
       </button>
+
+      <p style={{ marginTop: "14px", fontSize: "12px", opacity: 0.6 }}>
+        Restricted admin access
+      </p>
     </div>
   </div>
 );
+
 
 
 }
