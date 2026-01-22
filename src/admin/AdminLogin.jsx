@@ -48,29 +48,22 @@ export default function AdminLogin() {
     >
       <h2 style={{ marginBottom: "20px" }}>Admin Login</h2>
 
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        style={{
-          width: "100%",
-          padding: "10px",
-          marginBottom: "10px",
-        }}
-      />
+ <input
+  type="email"
+  autoComplete="off"
+  placeholder="Email"
+  value={email}
+  onChange={(e) => setEmail(e.target.value)}
+/>
 
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        style={{
-          width: "100%",
-          padding: "10px",
-          marginBottom: "15px",
-        }}
-      />
+<input
+  type="password"
+  autoComplete="new-password"
+  placeholder="Password"
+  value={password}
+  onChange={(e) => setPassword(e.target.value)}
+/>
+
 
       <button
         onClick={login}
