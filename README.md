@@ -7,7 +7,9 @@ In addition to showcasing projects and skills, it includes a **secure admin dash
 
 ##  Live Demo
 
-- **Portfolio:** [https://<your-site-name>.netlify.app](https://gagana-portfolio.netlify.app/)  
+- **Portfolio:** [https://<your-site-name>.netlify.app](https://gagana-portfolio.netlify.app/)
+- **Admin Login:** [https://<your-site-name>.netlify.app](https://gagana-portfolio.netlify.app/admin/login) 
+- **Admin Messages:** [https://<your-site-name>.netlify.app](https://gagana-portfolio.netlify.app/admin/messages)  
 >  Admin routes are protected and require authentication.
 
 ---
