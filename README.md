@@ -1,34 +1,81 @@
-# Personal Portfolio Website in React
+# Personal Portfolio with Supabase Admin Panel
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a full-stack **personal portfolio website** built using **React** with a **Supabase-powered backend**.  
+In addition to showcasing projects and skills, it includes a **secure admin dashboard** for managing contact form messages.
 
-Built using:
+---
 
-- Front-end library: React
-- CSS framework: React-bootstrap
-- CSS animations library: Animate.css
+##  Live Demo
 
-In the /personal-portfolio, you can run:
+- **Portfolio:** [https://<your-site-name>.netlify.app](https://gagana-portfolio.netlify.app/)  
+- **Admin Login:** [https://<your-site-name>.netlify.app](https://gagana-portfolio.netlify.app/admin/login)  
+- **Admin Messages:** [https://<your-site-name>.netlify.app](https://gagana-portfolio.netlify.app/admin/messages)  
 
-### `npm start`
+>  Admin routes are protected and require authentication.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##  Features
 
-### `npm test`
+###  Public Portfolio
+- Responsive UI built with React & Bootstrap
+- Sections for:
+  - Home / Banner
+  - Skills
+  - Projects
+  - Contact Form
+- Smooth animations and modern layout
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Contact Form
+- Users can submit messages from the portfolio
+- Messages are stored securely in **Supabase PostgreSQL**
+- No backend server required (serverless architecture)
 
-### `npm run build`
+###  Admin Panel (Protected)
+- Admin authentication using **Supabase Auth**
+- Secure login system (email & password)
+- Protected routes using React Router
+- Admin can view all contact messages
+- Logout functionality included
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠 Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Frontend**
+- React (Create React App)
+- React Router
+- Bootstrap
+- Animate.css
+
+**Backend (Serverless)**
+- Supabase
+  - Authentication
+  - PostgreSQL Database
+  - Row Level Security (RLS)
+
+**Deployment**
+- Netlify (Frontend)
+- Supabase (Backend)
+
+---
+
+## 🔒 Security & Privacy
+
+- No passwords or secrets stored in frontend code
+- Uses **Supabase public anon key** (safe by design)
+- Admin access protected using Supabase Auth
+- Database access controlled with **Row Level Security (RLS)**
+- Environment variables managed securely in Netlify
+
+---
+
+## ⚙️ Environment Variables
+
+This project uses **Create React App**, so environment variables must start with `REACT_APP_`.
+
+Create a `.env` file locally:
+
+```env
+REACT_APP_SUPABASE_URL=your_supabase_project_url
+REACT_APP_SUPABASE_ANON_KEY=your_supabase_anon_key
