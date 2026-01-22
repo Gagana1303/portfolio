@@ -6,7 +6,6 @@ import navIcon3 from '../assets/img/logo3.png';
 import { HashLink } from 'react-router-hash-link';
 
 export const NavBar = () => {
-  const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {

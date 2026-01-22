@@ -4,19 +4,22 @@ import headerImg from "../assets/img/me.jpg";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+const TO_ROTATE = [
+  "Web Developer",
+  "Data Science & Machine Learning Enthusiast",
+];
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
-  const toRotate = [ "Web Developer", "Data Science & Machine Learning Enthusiast" ];
   const period = 2000;
 
   useEffect(() => {
   const tick = () => {
-    let i = loopNum % toRotate.length;
-    let fullText = toRotate[i];
+    let i = loopNum % TO_ROTATE.length;
+    let fullText = TO_ROTATE[i];
     let updatedText = isDeleting
       ? fullText.substring(0, text.length - 1)
       : fullText.substring(0, text.length + 1);
@@ -37,7 +40,7 @@ export const Banner = () => {
 
   const ticker = setInterval(tick, delta);
   return () => clearInterval(ticker);
-}, [text, delta, isDeleting, loopNum, toRotate, period]);
+}, [text, delta, isDeleting, loopNum, period]);
 
 
   return (
@@ -60,7 +63,7 @@ export const Banner = () => {
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
                   <div className="hero-image-wrapper">
-                  <img src={headerImg} alt="Gagana M R profile photo" className="hero-img"/>
+                  <img src={headerImg} alt="Gagana M R profile" className="hero-img"/>
                   </div>
                 </div>}
             </TrackVisibility>
