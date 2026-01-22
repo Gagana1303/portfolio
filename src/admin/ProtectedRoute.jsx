@@ -11,7 +11,7 @@ export default function ProtectedRoute({ children }) {
       if (!data.session) navigate("/admin/login");
       setLoading(false);
     });
-  }, []);
+  }, [navigate]);
 
   if (loading) return null;
   return children;
